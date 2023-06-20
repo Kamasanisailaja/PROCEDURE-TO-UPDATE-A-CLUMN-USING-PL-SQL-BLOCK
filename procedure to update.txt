@@ -1,0 +1,23 @@
+procedure to update
+
+ create or replace procedure up(id customer.cid%type)
+ is begin
+ update customer set salary=salary+100
+ where cid=id;
+ end;
+ /
+Procedure created.
+
+SQL> exec up(102)
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from customer
+  2  /
+
+       CID CNAME                              SALARY
+---------- ------------------------------ ----------
+       101 sailu                             1000000
+       102 trisha                            1000100
+       103 thanu                             1000000
+       104 priya                              300000
